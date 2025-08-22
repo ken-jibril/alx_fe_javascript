@@ -74,6 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
         textInput.value = '';
         categoryInput.value = '';
 
-        
+
      }
+     showRandomQuote();
+     createAddQuoteForm();
 })
