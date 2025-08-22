@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-
+    // Check if quotes are stored in local storage
+    const savedQuotes = JSON.parse(localStorage.getItem('quotes'));
+    if (savedQuotes) {
+        quotes.push(...savedQuotes);
+    }
+    // Initial quotes array
     const quotes = [
          { text: "Be yourself; everyone else is already taken.", category: "Life" },
         { text: "Simplicity is the soul of efficiency.", category: "Programming" }
@@ -48,6 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 text: quoteInput.value,
                 category: categoryInput.value
             });
+
+            localStorage.setItem('quotes', JSON.stringify(quotes));
+
             quoteInput.value = '';
             categoryInput.value = '';
         }
